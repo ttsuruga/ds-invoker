@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      html, body {
+        overflow: hidden;
+        width:  100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0;
+      }
+	  canvas { dislplay: block; }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="10" height="10"></canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        //canvas.style.display = "block";
+        var context = canvas.getContext('2d');
+        context.canvas.width  = window.innerWidth;
+        context.canvas.height = window.innerHeight;
+        //context.font = '40pt Calibri';
+        //context.fillStyle = 'blue';
+        //context.fillText('Hello World!', 150, 100);
+        
+        context.rect(0, 0, canvas.width, canvas.height);
+
+        // add linear gradient
+        var grd = context.createLinearGradient(0, 0, canvas.width, canvas.height);
+        // light blue
+        grd.addColorStop(0, '#8ED6FF');   
+        // dark blue
+        grd.addColorStop(1, '#004CB3');
+        context.fillStyle = grd;
+        context.fill();
+		context.font = '300pt Calibri';
+        context.fillStyle = 'white';
+		context.textAlign = 'center';
+		context.textBaseline = 'middle';
+		//textwidth = (canvas.width-300)/2;
+		//textheight = canvas.height/2;
+        context.fillText('OK!', (canvas.width)/2, (canvas.height)/2);
+      
+
+    </script>
+  </body>
+</html>   
